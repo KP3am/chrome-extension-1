@@ -1,0 +1,84 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg,#FFCC33,#FFCC66);
+    padding: 5%;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+}
+main{
+    width: 100%;
+    height: 100%;
+}
+main:after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.linkbtn{
+    transition: all .5s ease;
+    width:120px;
+    height: 120px;
+    margin:3%;
+    float: left;
+}
+.addbtn{
+    margin: 5%;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    background-color: hsla(0,0%,100%,.5);
+    color:#FFF;
+    font-size:9em;
+    line-height: 100px;
+    position: relative;
+}
+.addbtn:after{
+    content: '+';
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+}
+
+.modal{
+    position: fixed;
+    background-color: rgba(0,0,0,.3);
+    top: 0;bottom: 0;left: 0;right: 0;
+    z-index: -1;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform: scale(.5);
+    transition: all .5s ease;
+    text-align: center;
+    vertical-align: middle;
+}
+.modal.show{
+    opacity: 1;
+    z-index: 9999;
+    transform: scale(1);
+}
+.modal .dialog{
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    min-width: 200px;
+    min-height: 200px;
+    width: 80%;
+    height: 80%;
+    top:50%;left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute; 
+}
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 1120px){
+
+}
