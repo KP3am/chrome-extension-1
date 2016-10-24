@@ -4,8 +4,26 @@
     "description": "add new tab",
     "version": "0.1",
     "options_page": "view/tab.html",
+    "file_browser_handlers": [
+      {
+        "id": "upload",
+        "default_title": "Save to Gallery", // What the button will display
+        "file_filters": [
+          "filesystem:*.jpg", // To match all files, use "filesystem:*.*"
+          "filesystem:*.jpeg",
+          "filesystem:*.png"
+        ]
+      }
+    ],
     "permissions": [
         "tabs",
-        "storage"
-    ]
+        "storage",
+        "fileBrowserHandler"
+    ],
+	"file_system_provider_capabilities": {
+		"configurable": true,
+		"watchable": false,
+		"multiple_mounts": true,
+		"source": "network"
+	}
 }

@@ -1,3 +1,4 @@
+
 let data = [], datalength = 0;
 
 chrome.storage.sync.get('data', function (e) {

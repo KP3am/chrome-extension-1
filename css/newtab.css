@@ -75,6 +75,11 @@ main:after{
     transform: translate(-50%,-50%);
     position: absolute; 
 }
+
+.fileUpload{
+    /*display: none;*/
+}
+
 @media screen and (min-width: 768px){
 
 }
