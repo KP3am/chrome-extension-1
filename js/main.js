@@ -56,5 +56,19 @@ let $$ = (el) => {
             init.forEach( el => el.appendChild(element))
         }
     };
+    init.before = (element) => {
+        init.forEach( el => el.innerHTML = element + el.innerHTML)
+    };
+    function animate(handle){
+        const opacity = handle === 'show' ? 1 : 0;
+        return (long = 500, timefunc = 'ease') => {
+            init.forEach( el => {
+                el.style.transition = `opacity ${long}ms ${timefunc}`;
+                el.style.opacity = opacity;
+            })
+        }
+    }
+    init.hide = animate('hide');
+    init.hide = animate('show');
     return init
 }
