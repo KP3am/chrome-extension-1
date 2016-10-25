@@ -14,6 +14,16 @@ button{
     outline: none;
     cursor: pointer;
 }
+.animate{
+    position: absolute;
+    left: 0;right: 0;bottom: 0;top: 0;
+    background-color: #FFCC33;
+    animation: lineargradient 10s linear infinite;
+}
+@keyframes lineargradient{
+    0%{ background-image: linear-gradient(#FFCC99,#CCFFCC); }
+    100%{ background-image: linear-gradient(#336633,#00CCFF); }
+}
 main{
     width: 100%;
     height: 100%;

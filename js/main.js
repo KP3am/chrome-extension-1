@@ -32,3 +32,7 @@ function getStorage(){
         console.log(e.data);
     });
 }
+
+let $$ = (el) => Array.prototype.slice.call(document.querySelectorAll(el));
+
+$$.show = () => console.log(this);
