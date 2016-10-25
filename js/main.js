@@ -33,6 +33,28 @@ function getStorage(){
     });
 }
 
-let $$ = (el) => Array.prototype.slice.call(document.querySelectorAll(el));
-
-$$.show = () => console.log(this);
+let $$ = (el) => {
+    let init = Array.prototype.slice.call(document.querySelectorAll(el))
+    function handleClass(handle){
+        return (classstr) => {
+            const strlist = Array.isArray(classstr) ? classstr : classstr.split(' ')
+            init.forEach( el => 
+                strlist.forEach( str => 
+                    el.classList[handle](str)
+                )
+            )
+            return init
+        }
+    }
+    init.addClass = handleClass('add');
+    init.removeClass = handleClass('remove');
+    init.toggleClass = handleClass('toggle');
+    init.append = (element) => {
+        if (typeof element === 'string'){
+            init.forEach( el => el.innerHTML += element)
+        } else {
+            init.forEach( el => el.appendChild(element))
+        }
+    };
+    return init
+}
