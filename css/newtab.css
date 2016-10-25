@@ -61,7 +61,7 @@ main:after{
 
 .modal{
     position: fixed;
-    background-color: rgba(0,0,0,.3);
+    /*background-color: rgba(0,0,0,.3);*/
     top: 0;bottom: 0;left: 0;right: 0;
     z-index: -1;
     opacity: 0;
@@ -76,17 +76,52 @@ main:after{
     z-index: 9999;
     transform: scale(1);
 }
+.modal .modalbg{
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;
+    background-color: rgba(0,0,0,.3);
+    cursor: pointer;
+}
 .modal .dialog{
     border-radius: 10px;
     border: 1px solid #FFF;
     background-color: #FFF;
     min-width: 200px;
     min-height: 200px;
-    width: 80%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
     top:50%;left:50%;
     transform: translate(-50%,-50%);
     position: absolute; 
+}
+.modal .modalClose{
+    position: absolute;
+    right: 20px;top: 20px;
+    width: 50px;height: 50px;
+}
+.modal .modalClose:before, .modal .modalClose:after{
+    content: '';
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #CCC;
+    position: absolute; 
+    left: 0
+}
+.modal .modalClose:before{
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); 
+}
+.modal .modalClose:after{
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.modal .modalClose:hover:before, .modal .modalClose:hover:after{
+    background-color: #3C98E8;
 }
 @media screen and (min-width: 768px){
 

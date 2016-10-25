@@ -80,6 +80,6 @@ let $$ = (el) => {
 $$('.addbtn').on('click', function(){
     $$('.modal').addClass('show')
 });
-$$('.modal').on('click', function(){
+$$('.modalbg, .modalClose').on('click', function(){
     $$('.modal').removeClass('show')
 })
