@@ -69,6 +69,17 @@ let $$ = (el) => {
         }
     }
     init.hide = animate('hide');
-    init.hide = animate('show');
+    init.show = animate('show');
+    init.on = (type, callback) => {
+        init.forEach( el => {
+            el.addEventListener(type, callback)
+        })
+    };
     return init
 }
+$$('.addbtn').on('click', function(){
+    $$('.modal').addClass('show')
+});
+$$('.modal').on('click', function(){
+    $$('.modal').removeClass('show')
+})

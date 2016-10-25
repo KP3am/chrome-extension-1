@@ -17,12 +17,15 @@ button{
 .animate{
     position: absolute;
     left: 0;right: 0;bottom: 0;top: 0;
-    background-color: #FFCC33;
-    animation: lineargradient 10s linear infinite;
+    background-image: repeating-linear-gradient(135deg, #2448B1, #86C6FD, #2448B1);
+    -webkit-background-size: 200%;
+    background-size: 200%;
+    animation: lineargradient 10s linear
+     infinite;
 }
 @keyframes lineargradient{
-    0%{ background-image: linear-gradient(#FFCC99,#CCFFCC); }
-    100%{ background-image: linear-gradient(#336633,#00CCFF); }
+    0%{ background-position: 0; }
+    100%{ background-position: 100%; }
 }
 main{
     width: 100%;
